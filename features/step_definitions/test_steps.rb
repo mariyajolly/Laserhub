@@ -17,10 +17,9 @@ Then(/^User login (.*)$/) do |status|
   @logger.info 'User has successfully logged in to Laserhub web application'
   @browser.a(href: /logout/).click
   raise 'User login is successful with invalid credentials' if status == 'failure'
-rescue  StandardError => e
-  puts e
-  raise 'User login is not successful with valid credentials' if status == 'success'
-
+rescue  StandardError
+  @logger.warn 'Link to Logout was not found. Hence assuming login failed.'
+  raise 'User login is not successful with valid credentials' if status == 'success' # rubocop:disable Layout/EmptyLineAfterGuardClause
   alert_present = @browser.div(role: 'alert').present?
   @logger.info 'Login form is incomplete' unless alert_present
   alert_text = @browser.div(role: 'alert').text if alert_present
