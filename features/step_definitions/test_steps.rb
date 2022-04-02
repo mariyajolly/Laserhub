@@ -7,9 +7,9 @@ Given(/^Login to Laserhub's web application$/) do
 end
 
 When(/^Enter the credentials (.*),(.*)$/) do |username, password|
-  @browser.text_field(id: 'email').wait_until(timeout: 60).send_keys username
-  @browser.text_field(id: 'password').wait_until(timeout: 60).send_keys password
-  @browser.button(type: 'submit').wait_until(timeout: 60).click
+  @browser.text_field(id: 'email').wait_until(timeout: 30).send_keys username
+  @browser.text_field(id: 'password').wait_until(timeout: 30).send_keys password
+  @browser.button(type: 'submit').wait_until(timeout: 30).click
 end
 
 Then(/^User login (.*)$/) do |status|

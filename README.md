@@ -21,6 +21,15 @@ BDD using Cucumber, Ruby language and WATIR (Selenium abstraction in ruby).
 
   All codes has been tested for linting and code formatting using [RuboCop](https://github.com/rubocop/rubocop) as pre-commit
 
+## Examples tested
+
+In test.feature there are six examples mentioned.These include positive and negative cases as follows:-
+1. Valid username and password
+2. Valid username and invalid password
+3. Invalid username and password
+4. No username and password
+5. Valid username and no password
+6. No username and random password
 
 ## Installation
 
